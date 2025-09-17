@@ -15,6 +15,16 @@ export default function handler(req, res) {
       return res.status(400).json({ error: "Faltan datos obligatorios" });
     }
 
+    // Normalizar texto para evitar problemas de mayúsculas, acentos o espacios
+    const normalizar = (texto) =>
+      texto
+        .toLowerCase()
+        .normalize("NFD") // separa acentos
+        .replace(/[\u0300-\u036f]/g, "") // elimina acentos
+        .trim();
+
+    const destinoNormalizado = normalizar(destino);
+
     // Tarifas base (1-4 personas)
     const tarifasBase = {
       "Hoteles de Bavaro": 35,
@@ -33,13 +43,17 @@ export default function handler(req, res) {
       "Santo Domingo": 25
     };
 
-    let destinoClave = Object.keys(tarifasBase).find(key =>
-      destino.toLowerCase().includes(key.toLowerCase())
+    let destinoClave = null;
+
+    // 1. Coincidencia directa con las zonas base
+    destinoClave = Object.keys(tarifasBase).find((key) =>
+      destinoNormalizado.includes(normalizar(key))
     );
 
+    // 2. Si no hay coincidencia directa, buscar en alias
     if (!destinoClave) {
       for (let alias in aliasZonas) {
-        if (destino.toLowerCase().includes(alias)) {
+        if (destinoNormalizado.includes(normalizar(alias))) {
           destinoClave = aliasZonas[alias];
           break;
         }
