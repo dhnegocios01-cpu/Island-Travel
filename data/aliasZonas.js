@@ -10,6 +10,7 @@ const aliasZonas = {
   "riu bambu": "Hoteles de Bavaro",
   "barcelo bavaro": "Hoteles de Bavaro",
   "meliá caribe": "Hoteles de Bavaro",
+  "melia caribe": "Hoteles de Bavaro",
   "paradisus palma real": "Hoteles de Bavaro",
   "secrets royal beach": "Hoteles de Bavaro",
   "dreams royal beach": "Hoteles de Bavaro",
@@ -38,9 +39,14 @@ const aliasZonas = {
   "brisas de bavaro": "Hoteles de Bavaro",
   "residencial palma real": "Hoteles de Bavaro",
 
-  // Malls y centros comerciales
+  // Malls y centros comerciales (con variantes)
   "blue mall punta cana": "Hoteles de Bavaro",
+  "bluemall punta cana": "Hoteles de Bavaro",
+  "blue mall puntacana": "Hoteles de Bavaro",
+  "bluemall puntacana": "Hoteles de Bavaro",
   "downtown mall punta cana": "Hoteles de Bavaro",
+  "downtown punta cana": "Hoteles de Bavaro",
+  "downtown puntacana": "Hoteles de Bavaro",
   "san juan shopping center": "Hoteles de Bavaro",
   "palma real shopping village": "Hoteles de Bavaro",
   "plaza bavaro": "Hoteles de Bavaro",
@@ -57,6 +63,7 @@ const aliasZonas = {
 
   // Entretenimiento y vida nocturna
   "coco bongo punta cana": "Hoteles de Bavaro",
+  "coco bongo puntacana": "Hoteles de Bavaro",
   "imagine cave disco": "Hoteles de Bavaro",
   "oro nightclub": "Hoteles de Bavaro",
 
