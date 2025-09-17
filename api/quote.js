@@ -1,3 +1,5 @@
+import aliasZonas from "../data/aliasZonas.js";
+
 export default function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -31,87 +33,10 @@ export default function handler(req, res) {
       "Santo Domingo": 25
     };
 
-    // Alias de hoteles, Airbnb, residenciales y lugares → zona principal
-    const aliasZonas = {
-      // --- BÁVARO ---
-      "hard rock hotel": "Hoteles de Bavaro",
-      "riu palace bavaro": "Hoteles de Bavaro",
-      "riu republica": "Hoteles de Bavaro",
-      "riu naiboa": "Hoteles de Bavaro",
-      "riu bambu": "Hoteles de Bavaro",
-      "barcelo bavaro": "Hoteles de Bavaro",
-      "meliá caribe": "Hoteles de Bavaro",
-      "paradisus palma real": "Hoteles de Bavaro",
-      "secrets royal beach": "Hoteles de Bavaro",
-      "dreams royal beach": "Hoteles de Bavaro",
-      "occidental punta cana": "Hoteles de Bavaro",
-      "grand palladium": "Hoteles de Bavaro",
-      "impressive punta cana": "Hoteles de Bavaro",
-      "whala bavaro": "Hoteles de Bavaro",
-      "vista sol punta cana": "Hoteles de Bavaro",
-      "caribe deluxe princess": "Hoteles de Bavaro",
-      "tropical deluxe princess": "Hoteles de Bavaro",
-      "ocean blue": "Hoteles de Bavaro",
-      "los corales": "Hoteles de Bavaro",
-      "cortecito": "Hoteles de Bavaro",
-      "bibijagua": "Hoteles de Bavaro",
-      "plaza turquesa": "Hoteles de Bavaro",
-      "residencial el dorado": "Hoteles de Bavaro",
-      "airbnb bavaro": "Hoteles de Bavaro",
-      "villa bavaro": "Hoteles de Bavaro",
-      "apartamento bavaro": "Hoteles de Bavaro",
-
-      // --- MACAO ---
-      "macao": "Hoteles de Macao",
-      "dreams macao": "Hoteles de Macao",
-      "playa macao": "Hoteles de Macao",
-      "airbnb macao": "Hoteles de Macao",
-      "villa macao": "Hoteles de Macao",
-
-      // --- UVERO ALTO ---
-      "uvero alto": "Uvero Alto",
-      "excellence el carmen": "Uvero Alto",
-      "excellence punta cana": "Uvero Alto",
-      "dreams punta cana": "Uvero Alto",
-      "nickelodeon hotels": "Uvero Alto",
-      "breathless punta cana": "Uvero Alto",
-      "zoetry agua": "Uvero Alto",
-      "airbnb uvero alto": "Uvero Alto",
-      "villa uvero alto": "Uvero Alto",
-
-      // --- ROMANA ---
-      "casa de campo": "Romana",
-      "altos de chavon": "Romana",
-      "la romana": "Romana",
-      "hilton la romana": "Romana",
-      "dreams la romana": "Romana",
-      "bayahibe": "Romana",
-      "airbnb romana": "Romana",
-      "villa romana": "Romana",
-
-      // --- SANTO DOMINGO ---
-      "santo domingo": "Santo Domingo",
-      "zona colonial": "Santo Domingo",
-      "hotel jaragua": "Santo Domingo",
-      "embassy suites": "Santo Domingo",
-      "catalonia santo domingo": "Santo Domingo",
-      "sheraton santo domingo": "Santo Domingo",
-      "gazcue": "Santo Domingo",
-      "piantini": "Santo Domingo",
-      "naco": "Santo Domingo",
-      "bella vista": "Santo Domingo",
-      "airbnb santo domingo": "Santo Domingo",
-      "apartamento santo domingo": "Santo Domingo"
-    };
-
-    let destinoClave = null;
-
-    // 1. Buscar coincidencia directa en la tabla
-    destinoClave = Object.keys(tarifasBase).find(key =>
+    let destinoClave = Object.keys(tarifasBase).find(key =>
       destino.toLowerCase().includes(key.toLowerCase())
     );
 
-    // 2. Si no hay coincidencia directa, buscar en alias
     if (!destinoClave) {
       for (let alias in aliasZonas) {
         if (destino.toLowerCase().includes(alias)) {
