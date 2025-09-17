@@ -1,4 +1,4 @@
-import aliasZonas from "../data/aliasZonas.js";
+import aliasZonas from "../Data/aliaszonas.js";
 
 export default function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
