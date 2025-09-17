@@ -1,0 +1,9 @@
+{
+  "name": "island-travel-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.3",
+    "stripe": "^15.6.0"
+  }
+}

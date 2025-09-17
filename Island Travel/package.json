@@ -1,0 +1,16 @@
+{
+  "name": "island-travel-backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.9.3",
+    "stripe": "^15.6.0"
+  }
+}
