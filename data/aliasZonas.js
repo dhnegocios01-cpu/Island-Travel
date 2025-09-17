@@ -53,7 +53,7 @@ const aliasZonas = {
   "playa bavaro": "Hoteles de Bavaro",
   "playa bibijagua": "Hoteles de Bavaro",
   "playa arena gorda": "Hoteles de Bavaro",
-  "playa cabezade toro": "Hoteles de Bavaro",
+  "playa cabeza de toro": "Hoteles de Bavaro",
 
   // Entretenimiento y vida nocturna
   "coco bongo punta cana": "Hoteles de Bavaro",
